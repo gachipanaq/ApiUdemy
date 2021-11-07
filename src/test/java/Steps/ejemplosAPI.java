@@ -14,9 +14,23 @@ public class ejemplosAPI {
 
     public void POSTrequest(){
         given()
-        .baseUri("baseUri")
+        .baseUri("https://api.blogejemplo.com")
         .when()
-        .post("","");
+        .post("/posts","Título:Texto");
+    }
+
+    public void PUTrequest(){
+        given()
+        .baseUri("")
+        .when()
+        .put("","");
+    }
+
+    public void DELETErequest(){
+        given()
+        .baseUri("https://api.blogejemplo.com/posts/Texto")
+        .when()
+        .delete();
     }
 }
 
