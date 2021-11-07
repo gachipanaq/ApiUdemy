@@ -32,6 +32,24 @@ public class ejemplosAPI {
         .when()
         .delete();
     }
+
+    public void SOAPRequest(){
+        String xmlEnvelope = "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" " +
+        "xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">" +
+        "<soap12:Body>" +
+        "<Define xmlns=\"http://services.aonaware.com/webservices/\">" +
+        "<word></word>" +
+        "</Define>" +
+        "</soap12:Body>" +
+        "</soap12:Envelope>";
+
+            given()
+            .header("SOAPAction", "Define")
+            .baseUri("https://api.blogEjemplo.com")
+            .when()
+            .body(xmlEnvelope)
+            .post("/endpint");
+    }
 }
 
 
