@@ -4,7 +4,6 @@ import static io.restassured.RestAssured.given;
 import java.util.Base64;
 
 import io.restassured.http.*;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 public class ejemplosAPI {
